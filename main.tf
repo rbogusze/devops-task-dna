@@ -1,13 +1,4 @@
-# Specify the provider, access details are configured using AWS CLI, eg.
-#
-# $ aws configure --profile testing
-#   AWS Access Key ID [****]:
-#   AWS Secret Access Key [****]:
-#   Default region name [eu-west-1]:
-#   Default output format [json]:
-# $ export AWS_PROFILE=testing
-#
-#
+# Specify the provider, access details are configured using AWS CLI
 
 provider "aws" {
   region     = "${var.aws_region}"
