@@ -22,6 +22,14 @@ $ aws ec2 describe-instances
 }
 ```
 
+What is about to happen with terraform is that we will run a docker image as set in `variables.tf` file under `app_image` variable, which is currently set to `remik/remik_node:green`. That image is stored in public docker hub repository and we could first try to run it locally like:
+
+    $ docker run --rm -p 80:8080 remik/remik_node:green
+
+And check the results by checking http://localhost/
+
+What terraform does is that it runs the same image in ECS and additionally creates and alias in the `boguszewicz.net` domain that points to load balancer that is configured in front of ECS.
+
 Actual terraform execution
 ```
 $ terraform init
