@@ -38,12 +38,15 @@ $ terraform apply
 -> and the magic happens
 ```
 
-Now the http://boguszewicz.net should be reachable.
+Two domains with different endpoints are provided:
+
+http://boguszewicz.net - which goes to load balancer in front of ECS (dynamic, hits our docker every time)
+
+http://www.boguszewicz.net - which goes to cloudfront cache, backed by load balancer (static, cache)
+
+Page displays a visits counter which nicely shows if we see the live version or cache.
 
 When all testing is done do the clenup
 
     $ terraform destroy
-
-
-
 
