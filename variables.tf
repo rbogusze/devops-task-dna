@@ -40,10 +40,11 @@ variable "domain" {
   default = "boguszewicz.net"
 }
 
-variable "zone_id" {
-  description = "Hosted Zone ID (NOT ELB Hosted Zone ID) to be found in Route53 / Hosted zones"
-  default = "ZN6B8XIYIX51"
+variable "ssl_certificate_arn" {
+  description = "CloudFront requires a SSL certificate to enable its use as DNS CNAME"
+  default = "arn:aws:acm:us-east-1:813929159016:certificate/af3b2e42-3ed9-4880-a088-a5b7e9694bfe"
 }
+
 
 variable "tag_name" {
   description = "Tag to easily identify created resources"
